@@ -1,4 +1,4 @@
-<img src="https://drive.usercontent.google.com/download?id=1KbYhPopR37y50wHRMne7FRKLLUN-usi1">
+<centered><img src="https://drive.usercontent.google.com/download?id=1KbYhPopR37y50wHRMne7FRKLLUN-usi1" height=200px>
 
 # Tyzen9's docker-piwigo-mysql
 Docker container that provides both Piwigo and MySQL services
