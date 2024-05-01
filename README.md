@@ -1,5 +1,7 @@
 # Tyzen9's docker-piwigo-mysql
-<center><img src="https://drive.usercontent.google.com/download?id=1KbYhPopR37y50wHRMne7FRKLLUN-usi1" height=100></center>
+<p align="center" width="100%">
+    <img src="https://drive.usercontent.google.com/download?id=1KbYhPopR37y50wHRMne7FRKLLUN-usi1" height="100">
+</p>
 
 Docker container that provides both Piwigo and MySQL services
 
@@ -35,7 +37,9 @@ docker compose up
 ## First time Piwigo "Installation"
 When running the service for the first time on `http://host_name:<PIWIGO_EXTERNAL_PORT>`, you will be prompted to install Piwigo. You will need information from the `.env` file to complete this.
 
-<center><img src="./docs/images/piwigoInstall.png" width=50% height=50%></center>
+<p align="center" width="100%">
+    <img src="./docs/images/piwigoInstall.png" width=50% height=50%>
+</p>
 
 ### Database Configuration
 
