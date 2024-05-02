@@ -19,6 +19,9 @@ The `.env` file contains comments explaining what each configuration value does.
 1. Rename the `.env.sample` file to `.env`
 2. Edit the `.env` file and populate the parameters according to your environment.
 
+> **Note**
+> The `.env` file is where you can declare what versions of Piwigo and MySQL you desire.
+
 If you desire the ability to connect to the MySQL instance from another machine (for example with MySQL Workbench), then uncomment the following lines in the `docker-compose.yml` file by removing the `#` characters:
 
 ```yaml
@@ -65,3 +68,5 @@ I use [Portainer](https://www.portainer.io/) to manage and orchestrate my Docker
 4. Choose `Repository` and fill in the required fields (don't forget name at the top)
 5. At the bottom, there is an option to `Load variables from .env file`. Click this button and provide the prepared `.env` file for this environment.
 6. Click `Deploy the stack`
+
+Once successfuly deployed, you will be able to access the site at: `http://host_name:<PIWIGO_EXTERNAL_PORT>`.
