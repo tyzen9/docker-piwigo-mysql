@@ -60,7 +60,7 @@ These are the settings that are used to configure the Piwigo administration cons
 Finally, click `Start Installation` and you Piwigo is set and ready to be used.  The first thing you will likely want to do is login to the Administration Panel and [import your galleries](https://piwigo.org/doc/doku.php?id=user_documentation:learn:add_picture). 
 
 ## Production Deployment using Portainer
-I use [Portainer](https://www.portainer.io/) to manage and orchestrate my Docker resources. To deploy this into your Portainer environment:
+I use [Portainer](https://www.portainer.io/) to manage and orchestrate my Docker resources in my Production environments. To deploy this into your Portainer environment:
 
 1. Prepare a `.env` file for the Portainer environment
 2. In Portainer, choose the Environment to deploy to
