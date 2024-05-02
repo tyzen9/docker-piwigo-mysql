@@ -69,4 +69,4 @@ I use [Portainer](https://www.portainer.io/) to manage and orchestrate my Docker
 5. At the bottom, there is an option to `Load variables from .env file`. Click this button and provide the prepared `.env` file for this environment.
 6. Click `Deploy the stack`
 
-Once successfuly deployed, you will be able to access the site at: `http://host_name:<PIWIGO_EXTERNAL_PORT>`.
+Once successfully deployed, you will be able to access the site at: `http://host_name:<PIWIGO_EXTERNAL_PORT>`.
