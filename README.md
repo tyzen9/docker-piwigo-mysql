@@ -2,8 +2,10 @@
     <img src="https://drive.usercontent.google.com/download?id=1KbYhPopR37y50wHRMne7FRKLLUN-usi1" height="100">
 </p>
 
-# Tyzen9's Piwigo/MySQL Docker Multi-Container
-Docker container that provides both Piwigo and MySQL services
+# Tyzen9's Piwigo and MySQL Docker Multi-Container
+Docker container that provides both Piwigo and MySQL services.
+
+
 
 ## Prerequisites
 Install [Docker Engine](https://docs.docker.com/get-docker/) or [Docker Desktop](https://docs.docker.com/desktop/) if you require the Docker user interface.  In production it's generally best to use [Docker Engine](https://docs.docker.com/get-docker/) on a Linux host operating system.
@@ -24,7 +26,7 @@ If you desire the ability to connect to the MySQL instance from another machine 
     #  - ${MYSQL_EXTERNAL_PORT}:3306
 ```
 
-## Development Deployment
+## Start the Container (Development/Testing)
 Once the `.env` file is created and populated according to the needs of your development environment, using the command prompt navigate to the project's root directory and run the following command:
 
 ```
@@ -53,3 +55,13 @@ When running the service for the first time on `http://host_name:<PIWIGO_EXTERNA
 These are the settings that are used to configure the Piwigo administration console.  You should use a strong username and password combination here.
 
 Finally, click `Start Installation` and you Piwigo is set and ready to be used.  The first thing you will likely want to do is login to the Administration Panel and [import your galleries](https://piwigo.org/doc/doku.php?id=user_documentation:learn:add_picture). 
+
+## Production Deployment using Portainer
+I use [Portainer](https://www.portainer.io/) to manage and orchestrate my Docker resources. To deploy this into your Portainer environment:
+
+1. Prepare a `.env` file for the Portainer environment
+2. In Portainer, choose the Environment to deploy to
+3. In the left menu choose Stacks, then click `+ Add stack`
+4. Choose `Repository` and fill in the required fields (don't forget name at the top)
+5. At the bottom, there is an option to `Load variables from .env file`. Click this button and provide the prepared `.env` file for this environment.
+6. Click `Deploy the stack`
