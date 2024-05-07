@@ -19,7 +19,7 @@ The `.env` file contains comments explaining what each configuration value does.
 1. Rename the `.env.sample` file to `.env`
 2. Edit the `.env` file and populate the parameters according to your environment.
 
-> **Note**
+> :point_right:
 > The `.env` file is where you can declare what versions of Piwigo and MySQL you desire.
 
 If you desire the ability to connect to the MySQL instance from another machine (for example with MySQL Workbench), then uncomment the following lines in the `docker-compose.yml` file by removing the `#` characters:
@@ -30,14 +30,14 @@ If you desire the ability to connect to the MySQL instance from another machine 
 ```
 
 ## Start the Container (Development/Testing)
-Once the `.env` file is created and populated according to the needs of your development environment, using the command prompt navigate to the project's root directory and run the following command:
+
+1. Clone this repository: `git clone https://github.com/tyzen9/docker-piwigo-mysql.git`
+1. Rename the resulting directory to reflect the name of your site
+1. Once the `.env` file is created and populated according to the needs of your development environment, using the command prompt navigate to the project's root directory and run the following command:
 
 ```
 docker compose up
 ```
-
-> **Note**
-> After using 'docker-compose up', 'docker-compose start' and 'docker-compose stop' commands may be used.
 
 ## First time Piwigo "Installation"
 When running the service for the first time on `http://host_name:<PIWIGO_EXTERNAL_PORT>`, you will be prompted to install Piwigo. You will need information from the `.env` file to complete this.
@@ -58,6 +58,16 @@ When running the service for the first time on `http://host_name:<PIWIGO_EXTERNA
 These are the settings that are used to configure the Piwigo administration console.  You should use a strong username and password combination here.
 
 Finally, click `Start Installation` and you Piwigo is set and ready to be used.  The first thing you will likely want to do is login to the Administration Panel and [import your galleries](https://piwigo.org/doc/doku.php?id=user_documentation:learn:add_picture). 
+
+## MySQL Backups
+A shell script can be created to execute a MySQL database backup:
+
+```
+docker exec <PIWIGO_CONTAINER_ID> /usr/bin/mysqldump -u root -p<MYSQL_ROOT_PASSWORD> <MYSQL_DATABASE> > piwigo_dump.sql 2>/dev/null
+```
+
+- Create a shell script containing the properly formatted command for your environment, and use a `root` cronjob to schedule these backups.
+- The resulting `piwigo_dump.sql` file should be stored on a routinely backed up remote filesystem.
 
 ## Production Deployment using Portainer
 I use [Portainer](https://www.portainer.io/) to manage and orchestrate my Docker resources in my Production environments. To deploy this into your Portainer environment:
