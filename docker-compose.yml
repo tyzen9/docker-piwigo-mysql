@@ -17,6 +17,8 @@ services:
     # Uncomment this section to expose mysql to connections outside of the container
     # such as MySQL Workbench
     # -------------------------------------------------------------------------------
+    # ports:
+    #   - ${MYSQL_EXTERNAL_PORT}:3306
 
   piwigo:
     image: lscr.io/linuxserver/piwigo:${PIWIGO_VERSION_TAG}
